@@ -3,16 +3,16 @@ import * as ActionTypes from "./ActionTypes";
 export const dishes = (state = {
     isLoading: true, 
     errMess: null, 
-    dishes:[]}, action) => {
+    dishes:[{name:null, image:null, description: null, featured: true}]}, action) => {
         switch (action.type) {
             case ActionTypes.ADD_DISHES:
             return{...state, isLoading:false, errMess:null, dishes:action.payload}; 
                 
             case ActionTypes.DISHES_LOADING: 
-            return {...state, isLoading:true, errMess:null, dishes:[]}
+            return {...state, isLoading:true, errMess:null, dishes:[{name:null, image:null, description: null, featured: true}]}
 
             case ActionTypes.DISHES_FAILED: 
-            return { ...state, isLoading:false, errMess:action.payload, dishes:[]}
+            return { ...state, isLoading:false, errMess:action.payload}
         
             default:
                 return state; 
@@ -25,14 +25,14 @@ export const dishes = (state = {
 export const comments = (state = {
     isLoading: true, 
     errMess: null, 
-    comments:[]}, action) => {
+    comments:[{name:null, image:null, description: null, featured: true}]}, action) => {
         switch (action.type) {
             case ActionTypes.ADD_COMMENTS:
-            return{...state, isLoading:false, errMess:null, comments:action.payload}; 
+            return{...state, errMess:null, comments:action.payload}; 
                 
 
             case ActionTypes.COMMENTS_FAILED: 
-            return { ...state, isLoading:false, errMess:action.payload, comments:[]}
+            return { ...state, errMess:action.payload, comments:[{name:null, image:null, description: null, featured: true}]}
         
             default:
                 return state; 
@@ -43,16 +43,16 @@ export const comments = (state = {
 export const leaders = (state = {
     isLoading: true, 
     errMess: null, 
-    leaders:[]}, action) => {
+    leaders:[{name:null, image:null, description: null, featured: true}]}, action) => {
         switch (action.type) {
             case ActionTypes.ADD_LEADERS:
             return{...state, isLoading:false, errMess:null, leaders:action.payload}; 
                 
             case ActionTypes.LEADERS_LOADING: 
-            return {...state, isLoading:true, errMess:null, leaders:[]}
+            return {...state, isLoading:true, errMess:null, leaders:[{name:null, image:null, description: null, featured: true}]}
 
             case ActionTypes.LEADERS_FAILED: 
-            return { ...state, isLoading:false, errMess:action.payload, leaders:[]}
+            return { ...state, isLoading:false, errMess:action.payload}
         
             default:
                 return state; 
@@ -63,16 +63,16 @@ export const leaders = (state = {
 export const promotions = (state = {
     isLoading: true, 
     errMess: null, 
-    promotions:[]}, action) => {
+    promotions:[{name:null, image:null, description: null, featured: true}]}, action) => {
         switch (action.type) {
             case ActionTypes.ADD_PROMOS:
             return{...state, isLoading:false, errMess:null, promotions:action.payload}; 
                 
             case ActionTypes.PROMOS_LOADING: 
-            return {...state, isLoading:true, errMess:null, promotions:[]}
+            return {...state, isLoading:true, errMess:null, promotions:[{name:null, image:null, description: null, featured: true}]}
 
             case ActionTypes.PROMOS_FAILED: 
-            return { ...state, isLoading:false, errMess:action.payload, promotions:[]}
+            return { ...state, isLoading:false, errMess:action.payload}
         
             default:
                 return state; 
