@@ -27,6 +27,12 @@ export const comments = (state = {
     errMess: null, 
     comments:[{name:null, image:null, description: null, featured: true}]}, action) => {
         switch (action.type) {
+
+            case ActionTypes.ADD_COMMENT:
+                var comment = action.payload;
+                return{...state, isLoading:false, errMess:null, comments:state.comments.concat(comment)}; 
+
+
             case ActionTypes.ADD_COMMENTS:
             return{...state, errMess:null, comments:action.payload}; 
                 
@@ -90,3 +96,4 @@ export const promotions = (state = {
              return state; 
      }
  }; 
+

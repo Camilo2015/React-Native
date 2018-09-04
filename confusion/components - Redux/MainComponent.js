@@ -3,8 +3,6 @@ import Menu from './MenuComponent';
 import DishDetail from './DishDetailComponent';
 import Home from './HomeComponent';
 import Contact from "./ContactComponent";
-import Reservation from "./ReservationComponent";
-import Favorites from "./FavoritesComponent";
 import AboutUs from "./AboutUsComponent";
 import { View, Platform, Text, ScrollView, Image, StyleSheet } from "react-native";
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from "react-navigation"; 
@@ -130,44 +128,6 @@ const AboutNavigator = createStackNavigator({
     })
 });
 
-const ReservationNavigator = createStackNavigator({
-    Reservation: { screen: Reservation }
-}, {
-    navigationOptions: ({ navigation }) => ({
-        headerStyle: {
-            backgroundColor: "#512DA8"
-        },
-        headerTitleStyle: {
-            color: "#fff"
-        },
-        headerTintColor: "#fff", 
-        headerLeft: <Icon name='menu' size={24} 
-        color='white'
-        iconStyle={{ marginLeft:6 }}
-        onPress={() => navigation.navigate('DrawerToggle')}/>
-    })
-});
-
-
-const FavoritesNavigator = createStackNavigator({
-    Favorites: { screen: Favorites }
-}, {
-    navigationOptions: ({ navigation }) => ({
-        headerStyle: {
-            backgroundColor: "#512DA8"
-        },
-        headerTitleStyle: {
-            color: "#fff"
-        },
-        headerTintColor: "#fff", 
-        headerLeft: <Icon name='menu' size={24} 
-        color='white'
-        iconStyle={{ marginLeft:6 }}
-        onPress={() => navigation.navigate('DrawerToggle')}/>
-    })
-});
-
-
 const MainNavigator = createDrawerNavigator({
     Home: {
         screen: HomeNavigator, 
@@ -229,36 +189,6 @@ const MainNavigator = createDrawerNavigator({
             ),
         }
     }, 
-    Favorites: {
-        screen: FavoritesNavigator,
-        navigationOptions: {
-            title: 'Favorites',
-            drawerLabel: 'Favorites', 
-            drawerIcon: ({tintColor, focused}) =>(
-                <Icon 
-                name='heart'
-                type='font-awesome'
-                size={24}
-                color={tintColor}
-                />
-            ),
-        }
-    }, 
-    Reservation: {
-        screen: ReservationNavigator,
-        navigationOptions: {
-            title: 'Reserve table',
-            drawerLabel: 'Reserve Table', 
-            drawerIcon: ({tintColor, focused}) =>(
-                <Icon 
-                name='cutlery'
-                type='font-awesome'
-                size={24}
-                color={tintColor}
-                />
-            ),
-        }
-    } 
 }, {
     drawerBackgroundColor: '#D1C4E9', 
     contentComponent: CustomDrawerContentComponent
